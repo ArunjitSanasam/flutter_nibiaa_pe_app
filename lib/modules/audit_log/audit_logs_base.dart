@@ -104,6 +104,7 @@ class _AuditLogCardState extends TbContextState<AuditLogCard> {
       children: [
         Positioned.fill(
             child: Container(
+                color: Color.fromARGB(255,48, 48, 74),
                 alignment: Alignment.centerLeft,
                 child: Container(
                   width: 4,
@@ -148,7 +149,7 @@ class _AuditLogCardState extends TbContextState<AuditLogCard> {
                                                 minFontSize: 8,
                                                 overflow: TextOverflow.ellipsis,
                                                 style: TextStyle(
-                                                    color: Color(0xFF282828),
+                                                    color: Color.fromARGB(255, 255, 255, 255),
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 14,
                                                     height: 20 / 14))),
@@ -210,7 +211,7 @@ class _AuditLogCardState extends TbContextState<AuditLogCard> {
                                 actionTypeTranslations[
                                     widget.auditLog.actionType]!,
                                 style: TextStyle(
-                                    color: Color(0xFF282828),
+                                    color: Color.fromARGB(255, 255, 255, 255),
                                     fontWeight: FontWeight.normal,
                                     fontSize: 14,
                                     height: 20 / 14))),

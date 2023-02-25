@@ -128,6 +128,7 @@ class _AlarmCardState extends TbContextState<AlarmCard> {
   Widget build(BuildContext context) {
     if (this.loading) {
       return Container(
+          color: Color.fromARGB(255, 48, 48, 74),
           height: 134,
           alignment: Alignment.center,
           child: RefreshProgressIndicator());
@@ -137,6 +138,7 @@ class _AlarmCardState extends TbContextState<AlarmCard> {
         children: [
           Positioned.fill(
               child: Container(
+                color: Color.fromARGB(255, 48, 48, 74),
                   alignment: Alignment.centerLeft,
                   child: Container(
                     width: 4,

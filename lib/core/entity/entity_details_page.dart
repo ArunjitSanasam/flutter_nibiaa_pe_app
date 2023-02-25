@@ -7,10 +7,10 @@ import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
 abstract class EntityDetailsPage<T extends BaseData> extends TbPageWidget {
   final labelTextStyle =
-      TextStyle(color: Color(0xFF757575), fontSize: 14, height: 20 / 14);
+      TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 14, height: 20 / 14);
 
   final valueTextStyle =
-      TextStyle(color: Color(0xFF282828), fontSize: 14, height: 20 / 14);
+      TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 14, height: 20 / 14);
 
   final String _defaultTitle;
   final String _entityId;
@@ -71,7 +71,7 @@ class _EntityDetailsPageState<T extends BaseData>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 48, 48, 76),
       appBar: widget._hideAppBar
           ? null
           : TbAppBar(
@@ -97,11 +97,7 @@ class _EntityDetailsPageState<T extends BaseData>
                         if (widget._subTitle != null)
                           Text(widget._subTitle!,
                               style: TextStyle(
-                                  color: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline6!
-                                      .color!
-                                      .withAlpha((0.38 * 255).ceil()),
+                                  color: Colors.white,
                                   fontSize: 12,
                                   fontWeight: FontWeight.normal,
                                   height: 16 / 12))

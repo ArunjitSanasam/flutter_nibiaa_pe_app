@@ -151,6 +151,7 @@ class _DeviceCardState extends TbContextState<DeviceCard> {
     return Stack(children: [
       Positioned.fill(
           child: Container(
+              color: Color.fromARGB(255, 48, 48, 74) ,
               alignment: Alignment.centerLeft,
               child: Container(
                 width: 4,
@@ -234,8 +235,7 @@ class _DeviceCardState extends TbContextState<DeviceCard> {
                                                       child: Text(
                                                           '${widget.device.field('name')!}',
                                                           style: TextStyle(
-                                                              color: Color(
-                                                                  0xFF282828),
+                                                              color: Color.fromARGB(255, 255, 255, 255),
                                                               fontSize: 14,
                                                               fontWeight:
                                                                   FontWeight
@@ -249,7 +249,7 @@ class _DeviceCardState extends TbContextState<DeviceCard> {
                                                           widget.device
                                                               .createdTime!)),
                                                   style: TextStyle(
-                                                      color: Color(0xFFAFAFAF),
+                                                      color: Color.fromARGB(255, 255, 255, 255),
                                                       fontSize: 12,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -264,7 +264,7 @@ class _DeviceCardState extends TbContextState<DeviceCard> {
                                             Text(
                                                 '${widget.device.field('type')!}',
                                                 style: TextStyle(
-                                                    color: Color(0xFFAFAFAF),
+                                                    color: Color.fromARGB(255, 255, 255, 255),
                                                     fontSize: 12,
                                                     fontWeight:
                                                         FontWeight.normal,
@@ -292,7 +292,7 @@ class _DeviceCardState extends TbContextState<DeviceCard> {
                                   SizedBox(width: 16),
                                   if (hasDashboard)
                                     Icon(Icons.chevron_right,
-                                        color: Color(0xFFACACAC)),
+                                        color: Color.fromARGB(255, 255, 255, 255)),
                                   if (hasDashboard) SizedBox(width: 16),
                                 ]),
                             SizedBox(height: 12)
@@ -379,7 +379,7 @@ class _DeviceCardState extends TbContextState<DeviceCard> {
                             alignment: Alignment.centerLeft,
                             child: Text('${widget.device.field('name')!}',
                                 style: TextStyle(
-                                    color: Color(0xFF282828),
+                                    color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
                                     height: 20 / 14)))
@@ -391,7 +391,7 @@ class _DeviceCardState extends TbContextState<DeviceCard> {
                       children: [
                         Text('${widget.device.field('type')!}',
                             style: TextStyle(
-                                color: Color(0xFFAFAFAF),
+                                color: Color.fromARGB(255, 255, 255, 255),
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
                                 height: 16 / 12)),

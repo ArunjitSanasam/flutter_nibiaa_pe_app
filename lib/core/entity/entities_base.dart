@@ -87,6 +87,7 @@ mixin ContactBasedBase<T extends ContactBased, P> on EntitiesBase<T, P> {
   Widget buildEntityListCard(BuildContext context, T contact) {
     var address = Utils.contactToShortAddress(contact);
     return Container(
+      color: Color.fromARGB(255,48, 48, 74),
       padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       child: Row(
         mainAxisSize: MainAxisSize.max,
@@ -106,7 +107,7 @@ mixin ContactBasedBase<T extends ContactBased, P> on EntitiesBase<T, P> {
                             alignment: Alignment.centerLeft,
                             child: Text('${contact.getName()}',
                                 style: TextStyle(
-                                    color: Color(0xFF282828),
+                                    color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
                                     height: 20 / 14))),
@@ -115,7 +116,7 @@ mixin ContactBasedBase<T extends ContactBased, P> on EntitiesBase<T, P> {
                                 DateTime.fromMillisecondsSinceEpoch(
                                     contact.createdTime!)),
                             style: TextStyle(
-                                color: Color(0xFFAFAFAF),
+                                color: Color.fromARGB(255, 216, 210, 210),
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
                                 height: 16 / 12))
@@ -124,7 +125,7 @@ mixin ContactBasedBase<T extends ContactBased, P> on EntitiesBase<T, P> {
                   if (contact.email != null)
                     Text(contact.email!,
                         style: TextStyle(
-                            color: Color(0xFFAFAFAF),
+                            color: Color.fromARGB(255, 216, 210, 210),
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
                             height: 16 / 12)),
@@ -133,14 +134,14 @@ mixin ContactBasedBase<T extends ContactBased, P> on EntitiesBase<T, P> {
                   if (address != null)
                     Text(address,
                         style: TextStyle(
-                            color: Color(0xFFAFAFAF),
+                            color: Color.fromARGB(255, 216, 210, 210),
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
                             height: 16 / 12)),
                 ],
               )),
           SizedBox(width: 16),
-          Icon(Icons.chevron_right, color: Color(0xFFACACAC)),
+          Icon(Icons.chevron_right, color: Color.fromARGB(255, 255, 255, 255)),
           SizedBox(width: 8)
         ],
       ),
@@ -374,7 +375,11 @@ class FirstPageExceptionIndicator extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6,
+              style: TextStyle(color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              wordSpacing: 0.15),
+              
             ),
             if (message != null)
               const SizedBox(
@@ -384,6 +389,7 @@ class FirstPageExceptionIndicator extends StatelessWidget {
               Text(
                 message,
                 textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
               ),
             if (onTryAgain != null)
               const SizedBox(
@@ -395,6 +401,9 @@ class FirstPageExceptionIndicator extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton.icon(
                   onPressed: onTryAgain,
+                  style: ElevatedButton.styleFrom(
+                         backgroundColor: Color.fromARGB(255,2, 163, 254) //elevated btton background color
+                      ),
                   icon: const Icon(
                     Icons.refresh,
                     color: Colors.white,

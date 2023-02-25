@@ -15,7 +15,7 @@ class _MorePageState extends TbContextState<MorePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 37, 35, 60),
         body: Container(
           padding: EdgeInsets.fromLTRB(16, 40, 16, 20),
           child: Column(
@@ -25,10 +25,10 @@ class _MorePageState extends TbContextState<MorePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(Icons.account_circle,
-                      size: 48, color: Color(0xFFAFAFAF)),
+                      size: 48, color: Color.fromARGB(255, 255, 255, 255)),
                   Spacer(),
                   IconButton(
-                      icon: Icon(Icons.settings, color: Color(0xFFAFAFAF)),
+                      icon: Icon(Icons.settings, color: Color.fromARGB(255, 255, 255, 255)),
                       onPressed: () async {
                         await navigateTo('/profile');
                         setState(() {});
@@ -38,23 +38,23 @@ class _MorePageState extends TbContextState<MorePage> {
               SizedBox(height: 22),
               Text(_getUserDisplayName(),
                   style: TextStyle(
-                      color: Color(0xFF282828),
+                      color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
                       height: 23 / 20)),
               SizedBox(height: 2),
               Text(_getAuthorityName(context),
                   style: TextStyle(
-                      color: Color(0xFFAFAFAF),
+                      color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.normal,
                       fontSize: 14,
                       height: 16 / 14)),
               SizedBox(height: 24),
-              Divider(color: Color(0xFFEDEDED)),
+              Divider(color: Color.fromARGB(255, 255, 255, 255), thickness: 2),
               SizedBox(height: 8),
               buildMoreMenuItems(context),
               SizedBox(height: 8),
-              Divider(color: Color(0xFFEDEDED)),
+              Divider(color: Color(0xFFEDEDED), thickness: 2),
               SizedBox(height: 8),
               GestureDetector(
                   behavior: HitTestBehavior.opaque,
@@ -64,11 +64,11 @@ class _MorePageState extends TbContextState<MorePage> {
                           padding:
                               EdgeInsets.symmetric(vertical: 0, horizontal: 18),
                           child: Row(mainAxisSize: MainAxisSize.max, children: [
-                            Icon(Icons.logout, color: Color(0xFFE04B2F)),
+                            Icon(Icons.logout, color: Color.fromARGB(255, 205, 31, 0)),
                             SizedBox(width: 34),
                             Text('${S.of(context).logout}',
                                 style: TextStyle(
-                                    color: Color(0xFFE04B2F),
+                                    color: Color.fromARGB(255, 205, 31, 0),
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
@@ -103,11 +103,11 @@ class _MorePageState extends TbContextState<MorePage> {
               child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 18),
                   child: Row(mainAxisSize: MainAxisSize.max, children: [
-                    Icon(menuItem.icon, color: Color(0xFF282828)),
+                    Icon(menuItem.icon, color: Color.fromARGB(255, 255, 255, 255)),
                     SizedBox(width: 34),
                     Text(menuItem.title,
                         style: TextStyle(
-                            color: Color(0xFF282828),
+                            color: Color.fromARGB(255, 255, 255, 255),
                             fontStyle: FontStyle.normal,
                             fontWeight: FontWeight.w500,
                             fontSize: 14,

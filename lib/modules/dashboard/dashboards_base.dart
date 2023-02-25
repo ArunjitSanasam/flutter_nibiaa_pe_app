@@ -176,6 +176,7 @@ class _DashboardGridCardState extends TbContextState<DashboardGridCard> {
             ])),
             Divider(height: 1),
             Container(
+              color: Color.fromARGB(255, 48, 48, 74),
               height: 44,
               child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6),
@@ -187,6 +188,7 @@ class _DashboardGridCardState extends TbContextState<DashboardGridCard> {
                     minFontSize: 12,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
+                        color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
                         height: 20 / 14),

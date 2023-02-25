@@ -29,7 +29,7 @@ class _ResetPasswordRequestPageState
       LoginPageBackground(),
       SizedBox.expand(
           child: Scaffold(
-              backgroundColor: Colors.transparent,
+              backgroundColor: Color.fromARGB(200,37, 35, 60),
               appBar: TbAppBar(
                 tbContext,
                 title: Text('${S.of(context).passwordReset}'),
@@ -49,13 +49,15 @@ class _ResetPasswordRequestPageState
                                     '${S.of(context).passwordResetText}',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        color: Color(0xFFAFAFAF),
+                                        color: Color.fromARGB(255, 255, 255, 255),
                                         fontSize: 14,
                                         height: 24 / 14),
                                   ),
                                   SizedBox(height: 61),
                                   FormBuilderTextField(
                                     name: 'email',
+                                    style: TextStyle(color: Colors.white),
+                                    cursorColor: Colors.white ,
                                     autofocus: true,
                                     validator: FormBuilderValidators.compose([
                                       FormBuilderValidators.required(
@@ -66,8 +68,13 @@ class _ResetPasswordRequestPageState
                                               '${S.of(context).emailInvalidText}')
                                     ]),
                                     decoration: InputDecoration(
-                                        border: OutlineInputBorder(),
-                                        labelText: '${S.of(context).email} *'),
+                                        enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                        focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                        border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                        labelText: '${S.of(context).email} *',
+                                        labelStyle: TextStyle(color: Colors.white)
+                                        ),
+                                        
                                   ),
                                   Spacer(),
                                   ElevatedButton(
@@ -75,7 +82,9 @@ class _ResetPasswordRequestPageState
                                         '${S.of(context).requestPasswordReset}'),
                                     style: ElevatedButton.styleFrom(
                                         padding:
-                                            EdgeInsets.symmetric(vertical: 16)),
+                                            EdgeInsets.symmetric(vertical: 16),
+                                            backgroundColor: Color.fromARGB(255,2, 163, 254)),
+                                        
                                     onPressed: () {
                                       _requestPasswordReset();
                                     },

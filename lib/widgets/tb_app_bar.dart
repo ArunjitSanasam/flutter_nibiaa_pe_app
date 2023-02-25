@@ -149,11 +149,12 @@ class _TbAppSearchBarState extends TbContextState<TbAppSearchBar> {
         title: TextField(
             controller: _filter,
             autofocus: true,
-            // cursorColor: Colors.white,
+            cursorColor: Colors.white,
+            style: TextStyle(color: Colors.white),
             decoration: new InputDecoration(
               border: InputBorder.none,
               hintStyle: TextStyle(
-                color: Color(0xFF282828).withAlpha((255 * 0.38).ceil()),
+                color: Color.fromARGB(255, 255, 255, 255).withAlpha((255 * 0.38).ceil()),
               ),
               contentPadding:
                   EdgeInsets.only(left: 15, bottom: 11, top: 15, right: 15),

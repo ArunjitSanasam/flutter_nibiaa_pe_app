@@ -26,7 +26,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(200,48, 48, 76),
         appBar: TbAppBar(
           tbContext,
           title: Text('${S.of(context).changePassword}'),
@@ -50,6 +50,8 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                   child) {
                                 return FormBuilderTextField(
                                   name: 'currentPassword',
+                                  style: TextStyle(color: Colors.white),
+                                  cursorColor: Colors.white,
                                   obscureText: !showPassword,
                                   autofocus: true,
                                   validator: FormBuilderValidators.compose([
@@ -61,16 +63,21 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                       suffixIcon: IconButton(
                                         icon: Icon(showPassword
                                             ? Icons.visibility
-                                            : Icons.visibility_off),
+                                            : Icons.visibility_off,
+                                            color: Colors.white,),
                                         onPressed: () {
                                           _showCurrentPasswordNotifier.value =
                                               !_showCurrentPasswordNotifier
                                                   .value;
                                         },
                                       ),
-                                      border: OutlineInputBorder(),
+                                      enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                      focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                      border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
                                       labelText:
-                                          '${S.of(context).currentPasswordStar}'),
+                                          '${S.of(context).currentPasswordStar}',
+                                          labelStyle: TextStyle(color: Colors.white)),
+                                      
                                 );
                               }),
                           SizedBox(height: 24),
@@ -80,6 +87,8 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                   child) {
                                 return FormBuilderTextField(
                                   name: 'newPassword',
+                                  style: TextStyle(color: Colors.white),
+                                  cursorColor: Colors.white,
                                   obscureText: !showPassword,
                                   validator: FormBuilderValidators.compose([
                                     FormBuilderValidators.required(
@@ -90,15 +99,19 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                       suffixIcon: IconButton(
                                         icon: Icon(showPassword
                                             ? Icons.visibility
-                                            : Icons.visibility_off),
+                                            : Icons.visibility_off,
+                                        color: Colors.white),
                                         onPressed: () {
                                           _showNewPasswordNotifier.value =
                                               !_showNewPasswordNotifier.value;
                                         },
                                       ),
-                                      border: OutlineInputBorder(),
+                                      enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                      focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                      border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
                                       labelText:
-                                          '${S.of(context).newPasswordStar}'),
+                                          '${S.of(context).newPasswordStar}',
+                                      labelStyle: TextStyle(color: Colors.white)),
                                 );
                               }),
                           SizedBox(height: 24),
@@ -108,6 +121,8 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                   child) {
                                 return FormBuilderTextField(
                                   name: 'newPassword2',
+                                  style: TextStyle(color: Colors.white),
+                                  cursorColor: Colors.white,
                                   obscureText: !showPassword,
                                   validator: FormBuilderValidators.compose([
                                     FormBuilderValidators.required(
@@ -118,28 +133,35 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                       suffixIcon: IconButton(
                                         icon: Icon(showPassword
                                             ? Icons.visibility
-                                            : Icons.visibility_off),
+                                            : Icons.visibility_off,
+                                            color: Colors.white),
                                         onPressed: () {
                                           _showNewPassword2Notifier.value =
                                               !_showNewPassword2Notifier.value;
                                         },
                                       ),
-                                      border: OutlineInputBorder(),
+                                      enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                      focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                      border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
                                       labelText:
-                                          '${S.of(context).newPassword2Star}'),
+                                          '${S.of(context).newPassword2Star}',
+                                      labelStyle: TextStyle(color: Colors.white)),
                                 );
                               }),
                           SizedBox(height: 24),
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color.fromARGB(255,2, 163, 254),
                                   padding: EdgeInsets.all(16),
                                   alignment: Alignment.centerLeft),
+                                  
                               onPressed: () {
                                 _changePassword();
                               },
                               child: Center(
                                   child:
-                                      Text('${S.of(context).changePassword}')))
+                                      Text('${S.of(context).changePassword}',
+                                      style: TextStyle(color: Colors.white))))
                         ]),
                   ))),
             ),

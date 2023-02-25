@@ -130,8 +130,8 @@ class ThingsboardAppState extends State<ThingsboardApp>
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.white,
-        statusBarColor: Colors.white,
+        systemNavigationBarColor: Color.fromARGB(255, 2, 6, 25),
+        statusBarColor: Colors.black,
         systemNavigationBarIconBrightness: Brightness.light));
     return WlThemeWidget(
       appRouter.tbContext,

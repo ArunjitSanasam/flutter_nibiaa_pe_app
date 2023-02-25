@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -42,7 +44,7 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(200,48, 48, 76),
         appBar: TbAppBar(
           tbContext,
           title: const Text('Profile'),
@@ -75,6 +77,8 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                           SizedBox(height: 16),
                           FormBuilderTextField(
                             name: 'email',
+                            style: TextStyle(color: Colors.white),
+                            cursorColor: Colors.white,
                             validator: FormBuilderValidators.compose([
                               FormBuilderValidators.required(
                                   errorText:
@@ -84,34 +88,49 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                                       '${S.of(context).emailInvalidText}')
                             ]),
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: '${S.of(context).emailStar}'),
+                                enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                labelText: '${S.of(context).emailStar}',
+                                labelStyle: TextStyle(color: Colors.white)),
                           ),
                           SizedBox(height: 24),
                           FormBuilderTextField(
                             name: 'firstName',
+                            style: TextStyle(color: Colors.white),
+                            cursorColor: Colors.white ,
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: '${S.of(context).firstNameUpper}'),
+                                enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                labelText: '${S.of(context).firstNameUpper}',
+                                labelStyle: TextStyle(color: Colors.white)),
                           ),
                           SizedBox(height: 24),
                           FormBuilderTextField(
                             name: 'lastName',
+                            style: TextStyle(color: Colors.white),
+                            cursorColor: Colors.white,
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: '${S.of(context).lastNameUpper}'),
+                                enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                labelText: '${S.of(context).lastNameUpper}',
+                                labelStyle: TextStyle(color: Colors.white)),
                           ),
                           SizedBox(height: 24),
                           OutlinedButton(
                               style: OutlinedButton.styleFrom(
                                   padding: EdgeInsets.all(16),
-                                  alignment: Alignment.centerLeft),
+                                  alignment: Alignment.centerLeft,
+                                  backgroundColor: Color.fromARGB(255,2, 163, 254)),
                               onPressed: () {
                                 _changePassword();
                               },
                               child: Center(
                                   child:
-                                      Text('${S.of(context).changePassword}')))
+                                      Text('${S.of(context).changePassword}',
+                                      style: TextStyle(color:Colors.white))))
                         ]),
                   ))),
             ),

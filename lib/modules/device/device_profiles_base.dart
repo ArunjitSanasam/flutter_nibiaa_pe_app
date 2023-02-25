@@ -123,6 +123,7 @@ class _AllDevicesCardState extends TbContextState<AllDevicesCard> {
         behavior: HitTestBehavior.opaque,
         child: Container(
           child: Card(
+              color: Color.fromARGB(255, 48, 48, 74),
               margin: EdgeInsets.zero,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(4),
@@ -138,13 +139,14 @@ class _AllDevicesCardState extends TbContextState<AllDevicesCard> {
                         children: [
                           Text('${S.of(context).allDevices}',
                               style: TextStyle(
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
                                   height: 20 / 14)),
-                          Icon(Icons.arrow_forward, size: 18)
+                          Icon(Icons.arrow_forward, size: 18, color: Colors.white)
                         ],
                       )),
-                  Divider(height: 1),
+                  Divider(height: 0.5),
                   Padding(
                       padding: EdgeInsets.all(0),
                       child: Row(
@@ -157,7 +159,7 @@ class _AllDevicesCardState extends TbContextState<AllDevicesCard> {
                                 child: Container(
                                     height: 40,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: Color.fromARGB(255, 48, 48, 74),
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     child: StreamBuilder<int?>(
@@ -170,6 +172,7 @@ class _AllDevicesCardState extends TbContextState<AllDevicesCard> {
                                         } else {
                                           return Center(
                                               child: Container(
+                                                  color: Color.fromARGB(255, 48, 48, 74),
                                                   height: 20,
                                                   width: 20,
                                                   child: CircularProgressIndicator(
@@ -200,7 +203,7 @@ class _AllDevicesCardState extends TbContextState<AllDevicesCard> {
                                 child: Container(
                                     height: 40,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: Color.fromARGB(255, 48, 48, 74),
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     child: StreamBuilder<int?>(
@@ -213,6 +216,7 @@ class _AllDevicesCardState extends TbContextState<AllDevicesCard> {
                                         } else {
                                           return Center(
                                               child: Container(
+                                                color: Color.fromARGB(255, 48, 48, 74),
                                                   height: 20,
                                                   width: 20,
                                                   child: CircularProgressIndicator(
@@ -293,8 +297,8 @@ class _DeviceProfileCardState extends TbContextState<DeviceProfileCard> {
     double padding;
     if (hasImage) {
       image = Utils.imageFromBase64(entity.image!);
-      imageFit = BoxFit.contain;
-      padding = 8;
+      imageFit = BoxFit.cover;
+      padding = 0;
     } else {
       image = SvgPicture.asset(ThingsboardImage.deviceProfilePlaceholder,
           color: Theme.of(context).primaryColor,
@@ -317,6 +321,7 @@ class _DeviceProfileCardState extends TbContextState<DeviceProfileCard> {
                         child: image)))
           ])),
           Container(
+              color: Color.fromARGB(255, 48, 48, 74),
               height: 44,
               child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6),
@@ -328,11 +333,12 @@ class _DeviceProfileCardState extends TbContextState<DeviceProfileCard> {
                     minFontSize: 12,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
+                        color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
                         height: 20 / 14),
                   )))),
-          Divider(height: 1),
+          Divider(height: 0.5),
           GestureDetector(
               behavior: HitTestBehavior.opaque,
               child: FutureBuilder<int>(
@@ -344,9 +350,11 @@ class _DeviceProfileCardState extends TbContextState<DeviceProfileCard> {
                     return _buildDeviceCount(context, true, deviceCount);
                   } else {
                     return Container(
+                        color: Color.fromARGB(255, 48, 48, 74),
                         height: 40,
                         child: Center(
                             child: Container(
+                              color: Color.fromARGB(255, 48, 48, 74),
                                 height: 20,
                                 width: 20,
                                 child: CircularProgressIndicator(
@@ -361,7 +369,7 @@ class _DeviceProfileCardState extends TbContextState<DeviceProfileCard> {
               onTap: () {
                 navigateTo('/deviceList?active=true&deviceType=${entity.name}');
               }),
-          Divider(height: 1),
+          Divider(height: 0.5),
           GestureDetector(
               behavior: HitTestBehavior.opaque,
               child: FutureBuilder<int>(
@@ -373,9 +381,11 @@ class _DeviceProfileCardState extends TbContextState<DeviceProfileCard> {
                     return _buildDeviceCount(context, false, deviceCount);
                   } else {
                     return Container(
+                      color: Color.fromARGB(255, 48, 48, 74),
                         height: 40,
                         child: Center(
                             child: Container(
+                              color: Color.fromARGB(255, 48, 48, 74),
                                 height: 20,
                                 width: 20,
                                 child: CircularProgressIndicator(
@@ -397,7 +407,9 @@ class _DeviceProfileCardState extends TbContextState<DeviceProfileCard> {
 
 Widget _buildDeviceCount(BuildContext context, bool active, int count) {
   Color color = active ? Color(0xFF008A00) : Color(0xFFAFAFAF);
-  return Padding(
+  return Container(
+  color: Color.fromARGB(255, 48, 48, 74),
+  child:Padding(
     padding: EdgeInsets.all(12),
     child: Row(
       mainAxisSize: MainAxisSize.max,
@@ -435,9 +447,10 @@ Widget _buildDeviceCount(BuildContext context, bool active, int count) {
                     color: color))
           ],
         ),
-        Icon(Icons.chevron_right, size: 16, color: Color(0xFFACACAC))
+        Icon(Icons.chevron_right, size: 16, color: Color.fromARGB(255, 255, 255, 255))
       ],
     ),
+  )
   );
 }
 
@@ -453,7 +466,7 @@ class StrikeThroughPainter extends CustomPainter {
     paint.strokeWidth = 1.5;
     canvas.drawLine(Offset(offset, offset),
         Offset(size.width - offset, size.height - offset), paint);
-    paint.color = Colors.white;
+    paint.color = Color(0xFFAFAFAF);
     canvas.drawLine(Offset(2, 0), Offset(size.width + 2, size.height), paint);
   }
 

@@ -39,6 +39,7 @@ mixin AssetsBase on EntitiesBase<Asset, PageLink> {
       Flexible(
           fit: FlexFit.tight,
           child: Container(
+            color: Color.fromARGB(200,48, 48, 74),
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -58,7 +59,7 @@ mixin AssetsBase on EntitiesBase<Asset, PageLink> {
                                   alignment: Alignment.centerLeft,
                                   child: Text('${asset.name}',
                                       style: TextStyle(
-                                          color: Color(0xFF282828),
+                                          color: Color.fromARGB(255, 255, 255, 255),
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                           height: 20 / 14))),
@@ -67,7 +68,7 @@ mixin AssetsBase on EntitiesBase<Asset, PageLink> {
                                       DateTime.fromMillisecondsSinceEpoch(
                                           asset.createdTime!)),
                                   style: TextStyle(
-                                      color: Color(0xFFAFAFAF),
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal,
                                       height: 16 / 12))
@@ -75,14 +76,14 @@ mixin AssetsBase on EntitiesBase<Asset, PageLink> {
                         SizedBox(height: 4),
                         Text('${asset.type}',
                             style: TextStyle(
-                                color: Color(0xFFAFAFAF),
+                                color: Color.fromARGB(255, 255, 255, 255),
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
                                 height: 1.33))
                       ],
                     )),
                 SizedBox(width: 16),
-                Icon(Icons.chevron_right, color: Color(0xFFACACAC)),
+                Icon(Icons.chevron_right, color: Color.fromARGB(255, 255, 255, 255)),
                 SizedBox(width: 16)
               ],
             ),
@@ -95,6 +96,7 @@ mixin AssetsBase on EntitiesBase<Asset, PageLink> {
       Flexible(
           fit: FlexFit.loose,
           child: Container(
+              color: Color.fromARGB(200,48, 48, 74),
               padding: EdgeInsets.symmetric(vertical: 9, horizontal: 16),
               child: Row(mainAxisSize: MainAxisSize.min, children: [
                 Flexible(
@@ -107,13 +109,13 @@ mixin AssetsBase on EntitiesBase<Asset, PageLink> {
                             alignment: Alignment.centerLeft,
                             child: Text('${asset.name}',
                                 style: TextStyle(
-                                    color: Color(0xFF282828),
+                                    color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
                                     height: 1.7))),
                         Text('${asset.type}',
                             style: TextStyle(
-                                color: Color(0xFFAFAFAF),
+                                color: Color.fromARGB(255, 255, 255, 255),
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
                                 height: 1.33))

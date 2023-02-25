@@ -26,7 +26,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
   final ButtonStyle _oauth2ButtonWithTextStyle = OutlinedButton.styleFrom(
       padding: EdgeInsets.all(16),
       alignment: Alignment.centerLeft,
-      foregroundColor: Colors.black87);
+      foregroundColor: Color.fromARGB(221, 255, 255, 255));
 
   final ButtonStyle _oauth2IconButtonStyle = OutlinedButton.styleFrom(
       padding: EdgeInsets.all(16), alignment: Alignment.center);
@@ -54,7 +54,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(200,37, 35, 60),
         resizeToAvoidBottomInset: false,
         body: Stack(children: [
           LoginPageBackground(),
@@ -85,7 +85,8 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 28,
-                                        height: 36 / 28))
+                                        height: 36 / 28,
+                                        color: Colors.white))
                               ]),
                               SizedBox(height: 48),
                               if (tbContext.hasOAuthClients)
@@ -115,6 +116,8 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                     children: [
                                       FormBuilderTextField(
                                         name: 'username',
+                                        style: TextStyle(color: Colors.white),
+                                        cursorColor: Colors.white ,
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator:
@@ -127,9 +130,12 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                   '${S.of(context).emailInvalidText}')
                                         ]),
                                         decoration: InputDecoration(
-                                            border: OutlineInputBorder(),
+                                            enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                            focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                            border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
                                             labelText:
-                                                '${S.of(context).email}'),
+                                                '${S.of(context).email}',
+                                            labelStyle: TextStyle(color: Colors.white)),
                                       ),
                                       SizedBox(height: 28),
                                       ValueListenableBuilder(
@@ -139,6 +145,8 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                               bool showPassword, child) {
                                             return FormBuilderTextField(
                                               name: 'password',
+                                              style: TextStyle(color: Colors.white),
+                                              cursorColor: Colors.white ,
                                               obscureText: !showPassword,
                                               validator: FormBuilderValidators
                                                   .compose([
@@ -150,7 +158,8 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                   suffixIcon: IconButton(
                                                     icon: Icon(showPassword
                                                         ? Icons.visibility
-                                                        : Icons.visibility_off),
+                                                        : Icons.visibility_off,
+                                                        color: Colors.white,),
                                                     onPressed: () {
                                                       _showPasswordNotifier
                                                               .value =
@@ -158,9 +167,14 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                               .value;
                                                     },
                                                   ),
-                                                  border: OutlineInputBorder(),
+                                                  enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                                  focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
+                                                  border: OutlineInputBorder( borderSide: BorderSide(color: Colors.white)),
                                                   labelText:
-                                                      '${S.of(context).password}'),
+                                                      '${S.of(context).password}',
+                                                  labelStyle: 
+                                                  TextStyle(color: Colors.white)),
+                                                  
                                             );
                                           })
                                     ],
@@ -175,9 +189,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                     child: Text(
                                       '${S.of(context).passwordForgotText}',
                                       style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
+                                          color: Colors.white,
                                           letterSpacing: 1,
                                           fontSize: 12,
                                           height: 16 / 12),
@@ -187,10 +199,15 @@ class _LoginPageState extends TbPageState<LoginPage> {
                               ),
                               Spacer(),
                               ElevatedButton(
-                                child: Text('${S.of(context).login}'),
+                                child: Text('${S.of(context).login}',
+                                style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)                                
+                                  ),
                                 style: ElevatedButton.styleFrom(
                                     padding:
-                                        EdgeInsets.symmetric(vertical: 16)),
+                                        EdgeInsets.symmetric(vertical: 16),
+                                        backgroundColor: Color.fromARGB(255,2, 163, 254)),
                                 onPressed: () {
                                   _login();
                                 },

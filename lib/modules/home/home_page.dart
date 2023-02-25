@@ -43,14 +43,14 @@ class _HomePageState extends TbContextState<HomePage>
         elevation: dashboardState ? 0 : 8,
         title: Center(
             child: Container(
-                height: kToolbarHeight - 8,
+                height: kToolbarHeight - 20,
                 child: tbContext.wlService.userLogoImage != null
                     ? tbContext.wlService.userLogoImage!
                     : SizedBox())),
         actions: [
           if (tbClient.isSystemAdmin())
             IconButton(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.search, color: Colors.white),
               onPressed: () {
                 navigateTo('/tenants?search=true');
               },

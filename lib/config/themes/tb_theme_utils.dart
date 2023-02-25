@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:thingsboard_app/utils/transition/page_transitions.dart';
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
 abstract class TbThemeUtils {
   static final _tbTypography = Typography.material2018();
 
-  static final Color _tbTextColor = Color(0xFF282828);
+  static final Color _tbTextColor = Color.fromARGB(255, 255, 255, 255);
 
   static final tbPrimary =
       _mergeColors(Colors.teal, {'500': Colors.teal[800]!.value});
@@ -14,29 +15,33 @@ abstract class TbThemeUtils {
   static ThemeData createTheme(PaletteSettings? paletteSettings) {
     var primarySwatch =
         _materialColorFromPalette(paletteSettings?.primaryPalette, true);
-    var accentColor =
-        _materialColorFromPalette(paletteSettings?.accentPalette, false);
-    var primaryColor = primarySwatch[500]!;
+    var accentColor = Colors.white;
+    var primaryColor = Colors.white;
     ThemeData theme = ThemeData(primarySwatch: primarySwatch);
     return ThemeData(
         primarySwatch: primarySwatch,
         colorScheme: theme.colorScheme.copyWith(secondary: accentColor),
-        scaffoldBackgroundColor: Color(0xFFFAFAFA),
+        scaffoldBackgroundColor: Color.fromARGB(255,37, 35, 60),
         textTheme: _tbTypography.black,
-        primaryTextTheme: _tbTypography.black,
+        primaryTextTheme: _tbTypography.white,
         typography: _tbTypography,
         appBarTheme: AppBarTheme(
-            backgroundColor: Colors.white,
-            foregroundColor: _tbTextColor,
-            /* titleTextStyle: TextStyle(
-          color: _tbTextColor
+            backgroundColor: Color.fromARGB(255, 5, 12, 49),
+            foregroundColor: Colors.white,
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarBrightness: Brightness.light,
+              statusBarColor: Colors.black,
+              statusBarIconBrightness: Brightness.light,
+            ),
+             titleTextStyle: TextStyle(
+          color: Colors.white
       ),
       toolbarTextStyle: TextStyle(
-            color: _tbTextColor
-      ), */
+            color: Colors.black
+      ), 
             iconTheme: IconThemeData(color: _tbTextColor)),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-            backgroundColor: Colors.white,
+            backgroundColor: Color.fromARGB(255, 5, 12, 49),
             selectedItemColor: primaryColor,
             unselectedItemColor: primaryColor.withAlpha((255 * 0.38).ceil()),
             showSelectedLabels: true,
